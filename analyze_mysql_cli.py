@@ -12,7 +12,7 @@ from typing import List, Dict, Any
 
 # Configurações de conexão - use variáveis de ambiente
 MYSQL_HOST = os.environ.get('MYSQL_HOST', 'MYSQL_HOST')
-MYSQL_USER = os.environ.get('MYSQL_USER', 'willkoga')
+MYSQL_USER = os.environ.get('MYSQL_USER', 'seu_usuario_aqui')
 MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')  # OBRIGATÓRIO: export MYSQL_PASSWORD=sua_senha
 
 if not MYSQL_PASSWORD:
@@ -353,7 +353,7 @@ def generate_migration_plan(all_analysis: List[Dict]) -> str:
     report.append("   - Script customizado")
     report.append("\n4. **Exemplo com pgloader:**")
     report.append("   ```bash")
-    report.append("   pgloader mysql://willkoga:PASSWORD@HOST/nome_db postgresql://user@localhost/nome_db")
+    report.append("   pgloader mysql://MYSQL_USER:PASSWORD@HOST/nome_db postgresql://user@localhost/nome_db")
     report.append("   ```")
     report.append("\n5. **Migrar esquema** (CREATE TABLE, indexes, constraints)")
     report.append("\n6. **Migrar dados** (INSERT/COPY)")

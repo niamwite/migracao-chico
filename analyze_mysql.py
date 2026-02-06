@@ -52,7 +52,7 @@ if not MYSQL_PASSWORD:
 
 MYSQL_CONFIG = {
     'host': os.environ.get('MYSQL_HOST', 'seu_host_aqui'),
-    'user': os.environ.get('MYSQL_USER', 'willkoga'),
+    'user': os.environ.get('MYSQL_USER', 'seu_usuario_aqui'),
     'password': MYSQL_PASSWORD,
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor if 'pymysql' in sys.modules else None

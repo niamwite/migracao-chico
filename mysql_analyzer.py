@@ -337,4 +337,4 @@ def analyze_schema(host, port, user, password):
 
 
 if __name__ == '__main__':
-    analyze_schema('46.62.152.123', 3306, 'willkoga', 'PASSWORD')
+    analyze_schema('seu_host_aqui', 3306, 'seu_usuario_aqui', os.environ.get('MYSQL_PASSWORD'))

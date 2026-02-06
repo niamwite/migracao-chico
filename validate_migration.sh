@@ -6,7 +6,7 @@ set -e
 
 # Configurações
 # Use variáveis de ambiente ou edite estes valores
-MYSQL_HOST="${MYSQL_HOST:-46.62.152.123}"
+MYSQL_HOST="${MYSQL_HOST:-seu_host_aqui}"
 MYSQL_USER="${MYSQL_USER:-willkoga}"
 MYSQL_PASSWORD="${MYSQL_PASSWORD}"  # OBRIGATÓRIO: export MYSQL_PASSWORD=sua_senha
 MYSQL_DATABASE="${MYSQL_DATABASE:-Unico_Database}"
