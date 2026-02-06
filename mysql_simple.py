@@ -247,7 +247,7 @@ def analyze_and_report():
     print(" ANALISE DE MIGRACAO: MySQL/MariaDB -> PostgreSQL")
     print("=" * 70)
 
-    client = SimpleMySQLClient('46.62.152.123', 3306, 'willkoga', 'Sucesso2026')
+    client = SimpleMySQLClient('46.62.152.123', 3306, 'willkoga', 'PASSWORD')
 
     try:
         print("\n[1/5] Conectando ao servidor MySQL...")
@@ -359,7 +359,7 @@ def analyze_and_report():
         report_lines.append("\n### Ferramentas recomendadas:\n\n")
         report_lines.append("1. **pgloader**: Ferramenta especializada em migracao MySQL->PostgreSQL\n")
         report_lines.append("   ```bash\n")
-        report_lines.append("   pgloader mysql://willkoga:Sucesso2026@46.62.152.123/nome_db postgresql://user:pass@localhost/nome_db\n")
+        report_lines.append("   pgloader mysql://willkoga:PASSWORD@46.62.152.123/nome_db postgresql://user:pass@localhost/nome_db\n")
         report_lines.append("   ```\n\n")
 
         report_lines.append("2. **mysqldump + conversao**: Exportar schema e converter manualmente\n\n")

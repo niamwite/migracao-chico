@@ -4,6 +4,7 @@ Script para analisar banco de dados MySQL e planejar migração para PostgreSQL
 """
 
 import sys
+import os
 from typing import List, Dict, Any
 
 # Tentar importar biblioteca MySQL
@@ -42,11 +43,17 @@ except ImportError:
         sys.exit(1)
 
 
-# Configurações de conexão
+# Configurações de conexão - use variáveis de ambiente
+MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')
+if not MYSQL_PASSWORD:
+    print("❌ ERRO: Variável de ambiente MYSQL_PASSWORD não definida!")
+    print("   Use: export MYSQL_PASSWORD=sua_senha")
+    sys.exit(1)
+
 MYSQL_CONFIG = {
-    'host': '46.62.152.123',
-    'user': 'willkoga',
-    'password': 'Sucesso2026',
+    'host': os.environ.get('MYSQL_HOST', '46.62.152.123'),
+    'user': os.environ.get('MYSQL_USER', 'willkoga'),
+    'password': MYSQL_PASSWORD,
     'charset': 'utf8mb4',
     'cursorclass': pymysql.cursors.DictCursor if 'pymysql' in sys.modules else None
 }

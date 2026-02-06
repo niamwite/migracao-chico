@@ -697,7 +697,7 @@
 
 4. **Exemplo com pgloader:**
    ```bash
-   pgloader mysql://willkoga:Sucesso2026@46.62.152.123/nome_db postgresql://user@localhost/nome_db
+   pgloader mysql://willkoga:PASSWORD@46.62.152.123/nome_db postgresql://user@localhost/nome_db
    ```
 
 5. **Migrar esquema** (CREATE TABLE, indexes, constraints)

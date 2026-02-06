@@ -337,4 +337,4 @@ def analyze_schema(host, port, user, password):
 
 
 if __name__ == '__main__':
-    analyze_schema('46.62.152.123', 3306, 'willkoga', 'Sucesso2026')
+    analyze_schema('46.62.152.123', 3306, 'willkoga', 'PASSWORD')

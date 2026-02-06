@@ -5,10 +5,11 @@
 set -e
 
 # Configurações
-MYSQL_HOST="46.62.152.123"
-MYSQL_USER="willkoga"
-MYSQL_PASSWORD="Sucesso2026"
-MYSQL_DATABASE="Unico_Database"
+# Use variáveis de ambiente ou edite estes valores
+MYSQL_HOST="${MYSQL_HOST:-46.62.152.123}"
+MYSQL_USER="${MYSQL_USER:-willkoga}"
+MYSQL_PASSWORD="${MYSQL_PASSWORD}"  # OBRIGATÓRIO: export MYSQL_PASSWORD=sua_senha
+MYSQL_DATABASE="${MYSQL_DATABASE:-Unico_Database}"
 
 PG_HOST="localhost"
 PG_PORT="5432"

@@ -1,5 +1,26 @@
 # 🔄 Migração MySQL → PostgreSQL - Guia Completo
 
+## 🔐 Configuração de Credenciais
+
+**IMPORTANTE:** Por segurança, todos os scripts usam **variáveis de ambiente** para credenciais.
+
+Antes de executar qualquer script, configure as variáveis:
+
+```bash
+# Configurar variáveis de ambiente
+export MYSQL_PASSWORD="sua_senha_aqui"
+
+# Opcional: também pode configurar host e usuário
+export MYSQL_HOST="46.62.152.123"
+export MYSQL_USER="willkoga"
+```
+
+**Para tornar persistente (adicione ao ~/.bashrc ou ~/.zshrc):**
+```bash
+echo 'export MYSQL_PASSWORD="sua_senha_aqui"' >> ~/.bashrc
+source ~/.bashrc
+```
+
 ## 📊 Análise do Banco de Dados
 
 ### ✅ Status: **PODE SER MIGRADO**
@@ -88,7 +109,7 @@ yay -S pgloader
 
 **Comando de migração:**
 ```bash
-pgloader mysql://willkoga:Sucesso2026@46.62.152.123/Unico_Database \
+pgloader mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
   postgresql://postgres@localhost:5432/Unico_Database
 ```
 
@@ -96,7 +117,7 @@ pgloader mysql://willkoga:Sucesso2026@46.62.152.123/Unico_Database \
 ```bash
 pgloader --verbose \
   --cast-rule-typename "auto_increment to serial" \
-  mysql://willkoga:Sucesso2026@46.62.152.123/Unico_Database \
+  mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
   postgresql://postgres@localhost:5432/Unico_Database
 ```
 

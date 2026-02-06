@@ -7,12 +7,18 @@ Versão que usa o cliente mysql via CLI (sem dependências Python externas)
 import subprocess
 import json
 import sys
+import os
 from typing import List, Dict, Any
 
-# Configurações de conexão
-MYSQL_HOST = '46.62.152.123'
-MYSQL_USER = 'willkoga'
-MYSQL_PASSWORD = 'Sucesso2026'
+# Configurações de conexão - use variáveis de ambiente
+MYSQL_HOST = os.environ.get('MYSQL_HOST', '46.62.152.123')
+MYSQL_USER = os.environ.get('MYSQL_USER', 'willkoga')
+MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')  # OBRIGATÓRIO: export MYSQL_PASSWORD=sua_senha
+
+if not MYSQL_PASSWORD:
+    print("❌ ERRO: Variável de ambiente MYSQL_PASSWORD não definida!")
+    print("   Use: export MYSQL_PASSWORD=sua_senha")
+    sys.exit(1)
 
 # Mapeamento de tipos MySQL para PostgreSQL
 TYPE_MAPPINGS = {
