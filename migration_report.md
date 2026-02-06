@@ -685,7 +685,7 @@
 
 1. **Backup completo do MySQL**
    ```bash
-   mysqldump -h 46.62.152.123 -u willkoga -p --single-transaction --routines --triggers --all-databases > backup_mysql.sql
+   mysqldump -h MYSQL_HOST -u willkoga -p --single-transaction --routines --triggers --all-databases > backup_mysql.sql
    ```
 
 2. **Instalar PostgreSQL** e criar bancos correspondentes
@@ -697,7 +697,7 @@
 
 4. **Exemplo com pgloader:**
    ```bash
-   pgloader mysql://willkoga:PASSWORD@46.62.152.123/nome_db postgresql://user@localhost/nome_db
+   pgloader mysql://willkoga:PASSWORD@MYSQL_HOST/nome_db postgresql://user@localhost/nome_db
    ```
 
 5. **Migrar esquema** (CREATE TABLE, indexes, constraints)

@@ -11,7 +11,7 @@ import os
 from typing import List, Dict, Any
 
 # Configurações de conexão - use variáveis de ambiente
-MYSQL_HOST = os.environ.get('MYSQL_HOST', '46.62.152.123')
+MYSQL_HOST = os.environ.get('MYSQL_HOST', 'MYSQL_HOST')
 MYSQL_USER = os.environ.get('MYSQL_USER', 'willkoga')
 MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD')  # OBRIGATÓRIO: export MYSQL_PASSWORD=sua_senha
 
@@ -344,7 +344,7 @@ def generate_migration_plan(all_analysis: List[Dict]) -> str:
     report.append("\n### 🛠️ Estratégia de Migração Recomendada:\n")
     report.append("1. **Backup completo do MySQL**")
     report.append("   ```bash")
-    report.append("   mysqldump -h 46.62.152.123 -u willkoga -p --single-transaction --routines --triggers --all-databases > backup_mysql.sql")
+    report.append("   mysqldump -h MYSQL_HOST -u willkoga -p --single-transaction --routines --triggers --all-databases > backup_mysql.sql")
     report.append("   ```")
     report.append("\n2. **Instalar PostgreSQL** e criar bancos correspondentes")
     report.append("\n3. **Usar ferramenta de migração**:")

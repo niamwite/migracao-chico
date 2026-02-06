@@ -11,7 +11,7 @@ Antes de executar qualquer script, configure as variáveis:
 export MYSQL_PASSWORD="sua_senha_aqui"
 
 # Opcional: também pode configurar host e usuário
-export MYSQL_HOST="46.62.152.123"
+export MYSQL_HOST="MYSQL_HOST"
 export MYSQL_USER="willkoga"
 ```
 
@@ -109,7 +109,7 @@ yay -S pgloader
 
 **Comando de migração:**
 ```bash
-pgloader mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
+pgloader mysql://MYSQL_USER:PASSWORD@MYSQL_HOST/Unico_Database \
   postgresql://postgres@localhost:5432/Unico_Database
 ```
 
@@ -117,7 +117,7 @@ pgloader mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
 ```bash
 pgloader --verbose \
   --cast-rule-typename "auto_increment to serial" \
-  mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
+  mysql://MYSQL_USER:PASSWORD@MYSQL_HOST/Unico_Database \
   postgresql://postgres@localhost:5432/Unico_Database
 ```
 
@@ -127,9 +127,9 @@ pgloader --verbose \
 pip install mysql2pgsql
 
 mysql2pgsql \
-  -u willkoga \
+  -u MYSQL_USER \
   -p PASSWORD \
-  -h 46.62.152.123 \
+  -h MYSQL_HOST \
   -d Unico_Database \
   -f migration_script.sql
 ```
@@ -138,7 +138,7 @@ mysql2pgsql \
 
 ```bash
 # 1. Backup MySQL
-mysqldump -h 46.62.152.123 -u willkoga -p \
+mysqldump -h MYSQL_HOST -u MYSQL_USER -p \
   --single-transaction \
   --routines \
   --triggers \
@@ -229,14 +229,14 @@ ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
 
 ```bash
 # Backup completo
-mysqldump -h 46.62.152.123 -u willkoga -p \
+mysqldump -h MYSQL_HOST -u MYSQL_USER -p \
   --single-transaction \
   --routines \
   --triggers \
   --all-databases > backup_completo_$(date +%Y%m%d).sql
 
 # Backup apenas do banco Unico_Database
-mysqldump -h 46.62.152.123 -u willkoga -p \
+mysqldump -h MYSQL_HOST -u MYSQL_USER -p \
   --single-transaction \
   --routines \
   --triggers \
@@ -251,7 +251,7 @@ psql -U postgres -c "DROP DATABASE Unico_Database;"
 psql -U postgres -c "CREATE DATABASE Unico_Database;"
 
 # Ou restaurar do backup MySQL
-mysql -h 46.62.152.123 -u willkoga -p Unico_Database < backup_unico.sql
+mysql -h MYSQL_HOST -u MYSQL_USER -p Unico_Database < backup_unico.sql
 ```
 
 ## 📊 Mapeamento de Tipos MySQL → PostgreSQL

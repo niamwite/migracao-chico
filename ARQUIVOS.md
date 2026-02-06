@@ -101,7 +101,7 @@ sudo -u postgres createdb Unico_Database
 ./migrate.sh
 
 # Ou manualmente:
-pgloader mysql://willkoga:PASSWORD@46.62.152.123/Unico_Database \
+pgloader mysql://willkoga:PASSWORD@MYSQL_HOST/Unico_Database \
   postgresql://postgres@localhost:5432/Unico_Database
 ```
 

@@ -51,7 +51,7 @@ if not MYSQL_PASSWORD:
     sys.exit(1)
 
 MYSQL_CONFIG = {
-    'host': os.environ.get('MYSQL_HOST', '46.62.152.123'),
+    'host': os.environ.get('MYSQL_HOST', 'seu_host_aqui'),
     'user': os.environ.get('MYSQL_USER', 'willkoga'),
     'password': MYSQL_PASSWORD,
     'charset': 'utf8mb4',
