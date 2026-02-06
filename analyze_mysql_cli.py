@@ -353,7 +353,7 @@ def generate_migration_plan(all_analysis: List[Dict]) -> str:
     report.append("   - Script customizado")
     report.append("\n4. **Exemplo com pgloader:**")
     report.append("   ```bash")
-    report.append("   pgloader mysql://willkoga:Sucesso2026@46.62.152.123/nome_db postgresql://user@localhost/nome_db")
+    report.append("   pgloader mysql://willkoga:PASSWORD@HOST/nome_db postgresql://user@localhost/nome_db")
     report.append("   ```")
     report.append("\n5. **Migrar esquema** (CREATE TABLE, indexes, constraints)")
     report.append("\n6. **Migrar dados** (INSERT/COPY)")

@@ -128,7 +128,7 @@ pip install mysql2pgsql
 
 mysql2pgsql \
   -u willkoga \
-  -p Sucesso2026 \
+  -p PASSWORD \
   -h 46.62.152.123 \
   -d Unico_Database \
   -f migration_script.sql
