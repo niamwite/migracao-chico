@@ -33,3 +33,7 @@ claude/
 ANALISE_DADOS.md
 dump_analysis/
 backups/
+
+# Análises estatísticas com dados sensíveis
+analise_estatistica/
+*.sql
