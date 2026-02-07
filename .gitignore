@@ -28,3 +28,8 @@ Thumbs.db
 
 # Claude
 claude/
+
+# Análise de dados sensíveis (LOCAL ONLY)
+ANALISE_DADOS.md
+dump_analysis/
+backups/
